@@ -703,6 +703,15 @@ public class JSSSACompilerBackend implements CompileBackend<JSCompileResult> {
         theWriter.tab(3).text("},").newLine();
         theWriter.tab(2).text("},").newLine();
 
+        theWriter.tab(2).text("json").space().text(":").text("{").newLine();
+        theWriter.tab(3).text("parse").colon().text("function(text)").space().text("{").newLine();
+        theWriter.tab(4).text("return JSON.parse(text);").newLine();
+        theWriter.tab(3).text("},").newLine();
+        theWriter.tab(3).text("stringify").colon().text("function(value)").space().text("{").newLine();
+        theWriter.tab(4).text("return JSON.stringify(value);").newLine();
+        theWriter.tab(3).text("},").newLine();
+        theWriter.tab(2).text("},").newLine();
+
         theWriter.tab(2).text("unixfilesystem").space().text(":").space().text("{").newLine();
         theWriter.tab(3).text("getBooleanAttributes0String").colon().text("function(path)").space().text("{").newLine();
 

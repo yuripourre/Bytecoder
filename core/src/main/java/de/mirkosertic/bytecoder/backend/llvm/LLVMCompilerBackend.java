@@ -3339,6 +3339,11 @@ public class LLVMCompilerBackend implements CompileBackend<LLVMCompileResult> {
                 theWriter.println("             nativeconsole: function(caller) {return bytecoder.toBytecoderReference(console);},");
                 theWriter.println("         },");
 
+                theWriter.println("         json: {");
+                theWriter.println("             parse: function(text) {return JSON.parse(text);}");
+                theWriter.println("             stringify: function(value) {return JSON.stringify(value);}");
+                theWriter.println("         },");
+
                 theWriter.println("         unixfilesystem :{");
                 theWriter.println("             getBooleanAttributes0String : function(thisref,path) {");
                 theWriter.println("                 var jsPath = bytecoder.toJSString(path);");
